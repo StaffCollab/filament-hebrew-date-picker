@@ -77,8 +77,8 @@ export default function hijriDateTimePickerFormComponent({
             this.second = date?.second() ?? 0
 
             this.setDisplayText()
-            this.setMonths()
-            this.setDayLabels()
+            // this.setMonths()
+            // this.setDayLabels()
 
             if (isAutofocused) {
                 this.$nextTick(() =>
