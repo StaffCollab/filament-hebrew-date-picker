@@ -345,7 +345,7 @@ export default function hijriDateTimePickerFormComponent({
 
         getDayLabels: function () {
             // const labels = dayjs.weekdaysShort();
-            const labels = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const labels = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'שבת'];
 
             if (firstDayOfWeek === 0) {
                 return labels
@@ -422,18 +422,19 @@ export default function hijriDateTimePickerFormComponent({
 
         setMonths: function () {
             this.months = [
-                'תשרי',
-                'חשון',
-                'כסלו',
-                'טבת',
-                'שבט',
-                'אדר',
                 'ניסן',
                 'אייר',
                 'סיון',
                 'תמוז',
                 'אב',
                 'אלול',
+                'תשרי',
+                'חשון',
+                'כסלו',
+                'טבת',
+                'שבט',
+                'אדר',
+                'אדר ב',
             ];
         },
 
