@@ -1,12 +1,12 @@
 {
-    "name": "mohamedsabil83/filament-hijri-picker",
-    "description": "A Hijri date time picker component for Filament",
+    "name": "staffcollab/filament-hebrew-date-picker",
+    "description": "A hebrew date time picker component for Filament",
     "keywords": [
         "laravel",
         "filament",
-        "hijri",
+        "hebrew",
         "picker",
-        "filament-hijri-picker"
+        "filament-hebrew-picker"
     ],
     "homepage": "https://github.com/mohamedsabil83/filament-hijri-picker",
     "license": "MIT",
