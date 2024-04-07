@@ -4,14 +4,15 @@ import customParseFormat from 'dayjs/plugin/customParseFormat';
 import localeData from 'dayjs/plugin/localeData';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
-import HijriCalendarSystem from "@calidy/dayjs-calendarsystems/calendarSystems/HijriCalendarSystem";
+// import HebrewCalendarSystem from "@calidy/dayjs-calendarsystems/calendarSystems/HijriCalendarSystem";
+import HebrewCalendarSystem from "@calidy/dayjs-calendarsystems/calendarSystems/HebrewCalendarSystem";
 
 dayjs.extend(customParseFormat);
 dayjs.extend(localeData);
 dayjs.extend(timezone);
 dayjs.extend(utc);
 dayjs.extend(calendarSystems);
-dayjs.registerCalendarSystem('hijri', new HijriCalendarSystem());
+dayjs.registerCalendarSystem('hebrew', new HebrewCalendarSystem());
 
 window.dayjs = dayjs;
 
@@ -55,13 +56,13 @@ export default function hijriDateTimePickerFormComponent({
         init: function () {
             dayjs.locale(locale)
 
-            this.focusedDate = dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate = dayjs().tz(timezone).toCalendarSystem('hebrew')
 
             let date =
                 this.getSelectedDate() ??
                 dayjs().tz(timezone).hour(0).minute(0).second(0)
 
-            date = date.toCalendarSystem('hijri')
+            date = date.toCalendarSystem('hebrew')
 
             if (this.getMaxDate() !== null && date.isAfter(this.getMaxDate())) {
                 date = null
@@ -108,7 +109,7 @@ export default function hijriDateTimePickerFormComponent({
                 let year = +this.focusedYear
 
                 if (!Number.isInteger(year)) {
-                    year = dayjs().tz(timezone).toCalendarSystem('hijri').year()
+                    year = dayjs().tz(timezone).toCalendarSystem('hebrew').year()
 
                     this.focusedYear = year
                 }
@@ -287,7 +288,7 @@ export default function hijriDateTimePickerFormComponent({
         },
 
         dayIsDisabled: function (day) {
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hebrew')
 
             return this.dateIsDisabled(this.focusedDate.date(day))
         },
@@ -299,7 +300,7 @@ export default function hijriDateTimePickerFormComponent({
                 return false
             }
 
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
             return (
                 selectedDate.date() === day &&
@@ -309,7 +310,7 @@ export default function hijriDateTimePickerFormComponent({
         },
 
         dayIsToday: function (day) {
-            let date = dayjs().tz(timezone).toCalendarSystem('hijri')
+            let date = dayjs().tz(timezone).toCalendarSystem('Hebrew')
             this.focusedDate ??= date
 
             return (
@@ -320,25 +321,25 @@ export default function hijriDateTimePickerFormComponent({
         },
 
         focusPreviousDay: function () {
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
             this.focusedDate = this.focusedDate.subtract(1, 'day')
         },
 
         focusPreviousWeek: function () {
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
             this.focusedDate = this.focusedDate.subtract(1, 'week')
         },
 
         focusNextDay: function () {
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
             this.focusedDate = this.focusedDate.add(1, 'day')
         },
 
         focusNextWeek: function () {
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
             this.focusedDate = this.focusedDate.add(1, 'week')
         },
@@ -395,7 +396,7 @@ export default function hijriDateTimePickerFormComponent({
                 this.focusedDate =
                     this.getSelectedDate() ??
                     this.getMinDate() ??
-                    dayjs().tz(timezone).toCalendarSystem('hijri')
+                    dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
                 this.setupDaysGrid()
             }
@@ -408,7 +409,7 @@ export default function hijriDateTimePickerFormComponent({
                 this.setFocusedDay(day)
             }
 
-            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('hijri')
+            this.focusedDate ??= dayjs().tz(timezone).toCalendarSystem('Hebrew')
 
             this.setState(this.focusedDate)
 
@@ -462,12 +463,12 @@ export default function hijriDateTimePickerFormComponent({
         },
 
         setupDaysGrid: function () {
-            let date = this.focusedDate ?? dayjs().toCalendarSystem('hijri').tz(timezone)
+            let date = this.focusedDate ?? dayjs().toCalendarSystem('Hebrew').tz(timezone)
 
-            if(date.$C === 'hijri'){
+            if (date.$C === 'Hebrew') {
                 this.focusedDate = date
-            }else{
-                this.focusedDate= dayjs(dayjs.fromCalendarSystem('hijri', date.year(), date.month()+1, date.day())).tz(timezone).toCalendarSystem('hijri')
+            } else {
+                this.focusedDate = dayjs(dayjs.fromCalendarSystem('Hebrew', date.year(), date.month() + 1, date.day())).tz(timezone).toCalendarSystem('Hebrew')
             }
 
             console.log('Setup Days Grid', date.daysInMonth(), this.focusedDate.daysInMonth())
@@ -488,7 +489,7 @@ export default function hijriDateTimePickerFormComponent({
         },
 
         setFocusedDay: function (day) {
-            this.focusedDate = (this.focusedDate ?? dayjs().tz(timezone).toCalendarSystem('hijri')).date(
+            this.focusedDate = (this.focusedDate ?? dayjs().tz(timezone).toCalendarSystem('Hebrew')).date(
                 day,
             )
         },
