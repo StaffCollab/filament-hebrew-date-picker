@@ -76,9 +76,9 @@ export default function hijriDateTimePickerFormComponent({
             this.minute = date?.minute() ?? 0
             this.second = date?.second() ?? 0
 
-            this.setDisplayText()
-            this.setMonths()
-            this.setDayLabels()
+            // this.setDisplayText()
+            // this.setMonths()
+            // this.setDayLabels()
 
             if (isAutofocused) {
                 this.$nextTick(() =>
@@ -343,19 +343,19 @@ export default function hijriDateTimePickerFormComponent({
             this.focusedDate = this.focusedDate.add(1, 'week')
         },
 
-        getDayLabels: function () {
-            // const labels = dayjs.weekdaysShort();
-            const labels = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'שבת'];
+        // getDayLabels: function () {
+        //     // const labels = dayjs.weekdaysShort();
+        //     const labels = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'שבת'];
 
-            if (firstDayOfWeek === 0) {
-                return labels
-            }
+        //     if (firstDayOfWeek === 0) {
+        //         return labels
+        //     }
 
-            return [
-                ...labels.slice(firstDayOfWeek),
-                ...labels.slice(0, firstDayOfWeek),
-            ]
-        },
+        //     return [
+        //         ...labels.slice(firstDayOfWeek),
+        //         ...labels.slice(0, firstDayOfWeek),
+        //     ]
+        // },
 
         getMaxDate: function () {
             let date = dayjs(this.$refs.maxDate?.value)
@@ -420,23 +420,23 @@ export default function hijriDateTimePickerFormComponent({
                 : ''
         },
 
-        setMonths: function () {
-            this.months = [
-                'ניסן',
-                'אייר',
-                'סיון',
-                'תמוז',
-                'אב',
-                'אלול',
-                'תשרי',
-                'חשון',
-                'כסלו',
-                'טבת',
-                'שבט',
-                'אדר',
-                'אדר ב',
-            ];
-        },
+        // setMonths: function () {
+        //     this.months = [
+        //         'ניסן',
+        //         'אייר',
+        //         'סיון',
+        //         'תמוז',
+        //         'אב',
+        //         'אלול',
+        //         'תשרי',
+        //         'חשון',
+        //         'כסלו',
+        //         'טבת',
+        //         'שבט',
+        //         'אדר',
+        //         'אדר ב',
+        //     ];
+        // },
 
         setDayLabels: function () {
             this.dayLabels = this.getDayLabels()
