@@ -422,19 +422,18 @@ export default function hijriDateTimePickerFormComponent({
 
         setMonths: function () {
             this.months = [
-                'ניסן',
-                'אייר',
-                'סיון',
-                'תמוז',
-                'אב',
-                'אלול',
                 'תשרי',
                 'חשון',
                 'כסלו',
                 'טבת',
                 'שבט',
                 'אדר',
-                'אדר ב',
+                'ניסן',
+                'אייר',
+                'סיון',
+                'תמוז',
+                'אב',
+                'אלול',
             ];
         },
 
