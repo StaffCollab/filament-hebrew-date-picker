@@ -50,21 +50,7 @@ export default function hijriDateTimePickerFormComponent({
 
         dayLabels: [],
 
-        months: [
-            'ניסן',
-            'אייר',
-            'סיון',
-            'תמוז',
-            'אב',
-            'אלול',
-            'תשרי',
-            'חשון',
-            'כסלו',
-            'טבת',
-            'שבט',
-            'אדר',
-            'אדר ב',
-        ],
+        months: [],
 
         init: function () {
             dayjs.locale(locale)
@@ -91,7 +77,7 @@ export default function hijriDateTimePickerFormComponent({
             this.second = date?.second() ?? 0
 
             // this.setDisplayText()
-            // this.setMonths()
+            this.setMonths()
             // this.setDayLabels()
 
             if (isAutofocused) {
@@ -434,23 +420,38 @@ export default function hijriDateTimePickerFormComponent({
                 : ''
         },
 
-        // setMonths: function () {
-        //     this.months = [
-        //         'ניסן',
-        //         'אייר',
-        //         'סיון',
-        //         'תמוז',
-        //         'אב',
-        //         'אלול',
-        //         'תשרי',
-        //         'חשון',
-        //         'כסלו',
-        //         'טבת',
-        //         'שבט',
-        //         'אדר',
-        //         'אדר ב',
-        //     ];
-        // },
+        setMonths: function () {
+            // check for leapYear
+            dayjs().tz(timezone).toCalendarSystem('hebrew').isLeapYear() ? this.months = [
+                'ניסן',
+                'אייר',
+                'סיון',
+                'תמוז',
+                'אב',
+                'אלול',
+                'תשרי',
+                'חשון',
+                'כסלו',
+                'טבת',
+                'שבט',
+                'אדר',
+                'אדר ב',
+            ] :
+                this.months = [
+                    'ניסן',
+                    'אייר',
+                    'סיון',
+                    'תמוז',
+                    'אב',
+                    'אלול',
+                    'תשרי',
+                    'חשון',
+                    'כסלו',
+                    'טבת',
+                    'שבט',
+                    'אדר',
+                ];
+        },
 
         setDayLabels: function () {
             this.dayLabels = this.getDayLabels()
