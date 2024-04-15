@@ -50,7 +50,21 @@ export default function hijriDateTimePickerFormComponent({
 
         dayLabels: [],
 
-        months: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        months: [
+            'ניסן',
+            'אייר',
+            'סיון',
+            'תמוז',
+            'אב',
+            'אלול',
+            'תשרי',
+            'חשון',
+            'כסלו',
+            'טבת',
+            'שבט',
+            'אדר',
+            'אדר ב',
+        ],
 
         init: function () {
             dayjs.locale(locale)
