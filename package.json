@@ -1,5 +1,5 @@
 {
-  "name": "filament-hijri-picker",
+  "name": "filament-hebrew-picker",
   "type": "module",
   "scripts": {
     "dev": "node bin/build.js --dev",
@@ -8,7 +8,7 @@
   "devDependencies": {
     "@calidy/dayjs-calendarsystems": "^1.11.3",
     "dayjs": "^1.11.10",
-    "dayjs-calendar-hijri": "^1.0.2",
+    "dayjs-calendar-hebrew": "^1.0.2",
     "esbuild": "^0.20.1"
   }
 }

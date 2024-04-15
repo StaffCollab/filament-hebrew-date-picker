@@ -45,6 +45,6 @@ const defaultOptions = {
 
 compile({
     ...defaultOptions,
-    entryPoints: ['./resources/js/components/hijri-date-time-picker.js'],
-    outfile: './dist/js/components/hijri-date-time-picker.js',
+    entryPoints: ['./resources/js/components/hebrew-date-time-picker.js'],
+    outfile: './dist/js/components/hebrew-date-time-picker.js',
 })

@@ -8,12 +8,12 @@
         "picker",
         "filament-hebrew-picker"
     ],
-    "homepage": "https://github.com/mohamedsabil83/filament-hijri-picker",
+    "homepage": "https://github.com/staffcollab/filament-hebrew-picker",
     "license": "MIT",
     "authors": [
         {
-            "name": "MohamedSabil83",
-            "email": "me@mohamedsabil83.com",
+            "name": "StaffCollab",
+            "email": "me@staffcollab.com",
             "role": "Developer"
         }
     ],
@@ -38,18 +38,18 @@
     },
     "autoload": {
         "psr-4": {
-            "MohamedSabil83\\FilamentHijriPicker\\": "src/"
+            "StaffCollab\\FilamentHebrewPicker\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MohamedSabil83\\FilamentHijriPicker\\Tests\\": "tests/",
+            "StaffCollab\\FilamentHebrewPicker\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-filament-hijri-picker --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-filament-hebrew-picker --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -75,7 +75,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "MohamedSabil83\\FilamentHijriPicker\\FilamentHijriPickerServiceProvider"
+                "StaffCollab\\FilamentHebrewPicker\\FilamentHebrewPickerServiceProvider"
             ]
         }
     },

@@ -1,8 +1,8 @@
 <?php
 
-namespace MohamedSabil83\FilamentHijriPicker\Tests;
+namespace StaffCollab\FilamentHebrewPicker\Tests;
 
-use MohamedSabil83\FilamentHijriPicker\FilamentHijriPickerServiceProvider;
+use StaffCollab\FilamentHebrewPicker\FilamentHebrewPickerServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
@@ -15,7 +15,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            FilamentHijriPickerServiceProvider::class,
+            FilamentHebrewPickerServiceProvider::class,
         ];
     }
 

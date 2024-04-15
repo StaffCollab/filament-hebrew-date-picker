@@ -43,8 +43,8 @@
             @else
                 ax-load
             @endif
-            ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('filament-hijri-picker', 'mohamedsabil83/filament-hijri-picker') }}"
-            x-data="hijriDateTimePickerFormComponent({
+            ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('filament-hebrew-picker', 'staffcollab/filament-hebrew-picker') }}"
+            x-data="hebrewDateTimePickerFormComponent({
                 displayFormat: '{{ convert_date_format($getDisplayFormat())->to('day.js') }}',
                 firstDayOfWeek: {{ $getFirstDayOfWeek() }},
                 isAutofocused: @js($isAutofocused()),
@@ -57,7 +57,7 @@
                 $attributes
                     ->merge($getExtraAttributes(), escape: false)
                     ->merge($getExtraAlpineAttributes(), escape: false)
-                    ->class(['filament-hijri-picker'])
+                    ->class(['filament-hebrew-picker'])
             }}
         >
             <input
@@ -123,7 +123,7 @@
                 wire:ignore
                 wire:key="{{ $this->getId() }}.{{ $statePath }}.{{ $field::class }}.panel"
                 @class([
-                    'filament-hijri-picker-panel absolute z-10 rounded-lg bg-white p-4 shadow-lg ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
+                    'filament-hebrew-picker-panel absolute z-10 rounded-lg bg-white p-4 shadow-lg ring-1 ring-gray-950/5 dark:bg-gray-900 dark:ring-white/10',
                 ])
             >
                 <div class="grid gap-y-3">

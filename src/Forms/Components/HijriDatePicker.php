@@ -1,10 +1,10 @@
 <?php
 
-namespace MohamedSabil83\FilamentHijriPicker\Forms\Components;
+namespace StaffCollab\FilamentHebrewPicker\Forms\Components;
 
 use Filament\Forms;
 
-class HijriDatePicker extends Forms\Components\DatePicker
+class HebrewDatePicker extends Forms\Components\DatePicker
 {
-    protected string $view = 'filament-hijri-picker::components.hijri-date-time-picker';
+    protected string $view = 'filament-hebrew-picker::components.hebrew-date-time-picker';
 }

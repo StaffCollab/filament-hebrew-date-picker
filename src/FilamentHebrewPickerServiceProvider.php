@@ -1,15 +1,15 @@
 <?php
 
-namespace MohamedSabil83\FilamentHijriPicker;
+namespace StaffCollab\FilamentHebrewPicker;
 
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentHijriPickerServiceProvider extends PackageServiceProvider
+class FilamentHebrewPickerServiceProvider extends PackageServiceProvider
 {
-    public static string $name = 'filament-hijri-picker';
+    public static string $name = 'filament-hebrew-picker';
 
     public function configurePackage(Package $package): void
     {
@@ -21,7 +21,7 @@ class FilamentHijriPickerServiceProvider extends PackageServiceProvider
     public function packageBooted(): void
     {
         FilamentAsset::register([
-            AlpineComponent::make('filament-hijri-picker', __DIR__.'/../dist/js/components/hijri-date-time-picker.js'),
-        ], package: 'mohamedsabil83/filament-hijri-picker');
+            AlpineComponent::make('filament-hebrew-picker', __DIR__.'/../dist/js/components/hebrew-date-time-picker.js'),
+        ], package: 'staffcollab/filament-hebrew-picker');
     }
 }

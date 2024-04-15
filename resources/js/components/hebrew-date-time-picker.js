@@ -15,7 +15,7 @@ dayjs.registerCalendarSystem('hebrew', new HebrewCalendarSystem());
 
 window.dayjs = dayjs;
 
-export default function hijriDateTimePickerFormComponent({
+export default function hebrewDateTimePickerFormComponent({
     displayFormat,
     firstDayOfWeek,
     isAutofocused,
