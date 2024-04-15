@@ -50,7 +50,7 @@ export default function hijriDateTimePickerFormComponent({
 
         dayLabels: [],
 
-        months: [],
+        // months: [],
 
         init: function () {
             dayjs.locale(locale)
