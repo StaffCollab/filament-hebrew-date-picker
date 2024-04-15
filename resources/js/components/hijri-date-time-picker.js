@@ -113,11 +113,11 @@ export default function hijriDateTimePickerFormComponent({
                     this.focusedYear = year
                 }
 
+                this.focusedYear.isLeapYear() ? console.log('Leap Year') : console.log('Not Leap Year')
+
                 if (this.focusedDate.year() === year) {
                     return
                 }
-
-                $this.focusedYear.isLeapYear() ? console.log('Leap Year') : console.log('Not Leap Year')
 
                 this.focusedDate = this.focusedDate.year(year)
             })
