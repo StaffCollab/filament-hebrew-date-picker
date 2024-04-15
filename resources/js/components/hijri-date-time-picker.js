@@ -77,7 +77,7 @@ export default function hijriDateTimePickerFormComponent({
             this.second = date?.second() ?? 0
 
             // this.setDisplayText()
-            this.setMonths()
+            // this.setMonths()
             // this.setDayLabels()
 
             if (isAutofocused) {
@@ -116,6 +116,36 @@ export default function hijriDateTimePickerFormComponent({
                 if (this.focusedDate.year() === year) {
                     return
                 }
+
+                $this.focusedYear.isLeapYear() ? this.months = [
+                    'ניסן',
+                    'אייר',
+                    'סיון',
+                    'תמוז',
+                    'אב',
+                    'אלול',
+                    'תשרי',
+                    'חשון',
+                    'כסלו',
+                    'טבת',
+                    'שבט',
+                    'אדר',
+                    'אדר ב',
+                ] :
+                    this.months = [
+                        'ניסן',
+                        'אייר',
+                        'סיון',
+                        'תמוז',
+                        'אב',
+                        'אלול',
+                        'תשרי',
+                        'חשון',
+                        'כסלו',
+                        'טבת',
+                        'שבט',
+                        'אדר',
+                    ];
 
                 this.focusedDate = this.focusedDate.year(year)
             })
@@ -420,38 +450,38 @@ export default function hijriDateTimePickerFormComponent({
                 : ''
         },
 
-        setMonths: function () {
-            // check for leapYear
-            $this.focusedYear.isLeapYear() ? this.months = [
-                'ניסן',
-                'אייר',
-                'סיון',
-                'תמוז',
-                'אב',
-                'אלול',
-                'תשרי',
-                'חשון',
-                'כסלו',
-                'טבת',
-                'שבט',
-                'אדר',
-                'אדר ב',
-            ] :
-                this.months = [
-                    'ניסן',
-                    'אייר',
-                    'סיון',
-                    'תמוז',
-                    'אב',
-                    'אלול',
-                    'תשרי',
-                    'חשון',
-                    'כסלו',
-                    'טבת',
-                    'שבט',
-                    'אדר',
-                ];
-        },
+        // setMonths: function () {
+        //     // check for leapYear
+        //     $this.focusedYear.isLeapYear() ? this.months = [
+        //         'ניסן',
+        //         'אייר',
+        //         'סיון',
+        //         'תמוז',
+        //         'אב',
+        //         'אלול',
+        //         'תשרי',
+        //         'חשון',
+        //         'כסלו',
+        //         'טבת',
+        //         'שבט',
+        //         'אדר',
+        //         'אדר ב',
+        //     ] :
+        //         this.months = [
+        //             'ניסן',
+        //             'אייר',
+        //             'סיון',
+        //             'תמוז',
+        //             'אב',
+        //             'אלול',
+        //             'תשרי',
+        //             'חשון',
+        //             'כסלו',
+        //             'טבת',
+        //             'שבט',
+        //             'אדר',
+        //         ];
+        // },
 
         setDayLabels: function () {
             this.dayLabels = this.getDayLabels()
