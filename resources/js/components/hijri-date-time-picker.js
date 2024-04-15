@@ -77,7 +77,7 @@ export default function hijriDateTimePickerFormComponent({
             this.second = date?.second() ?? 0
 
             // this.setDisplayText()
-            this.setMonths(dayjs(this.focusedYear, 'YYYY').toCalendarSystem('hebrew').isLeapYear())
+            this.setMonths()
             // this.setDayLabels()
 
             if (isAutofocused) {
@@ -113,7 +113,7 @@ export default function hijriDateTimePickerFormComponent({
                     this.focusedYear = year
                 }
 
-                this.setMonths(dayjs(this.focusedYear, 'YYYY').toCalendarSystem('hebrew').isLeapYear())
+                this.setMonths()
 
                 if (this.focusedDate.year() === year) {
                     return
@@ -422,8 +422,9 @@ export default function hijriDateTimePickerFormComponent({
                 : ''
         },
 
-        setMonths: function (isLeapYear = false) {
+        setMonths: function () {
             // check for leapYear
+            const isLeapYear = dayjs(this.focusedYear, 'YYYY').toCalendarSystem('hebrew').isLeapYear() ?? dayjs().toCalendarSystem('hebrew').isLeapYear()
             isLeapYear ? this.months = [
                 'ניסן',
                 'אייר',
