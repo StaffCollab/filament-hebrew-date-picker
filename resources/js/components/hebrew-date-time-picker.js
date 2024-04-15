@@ -76,9 +76,9 @@ export default function hebrewDateTimePickerFormComponent({
             this.minute = date?.minute() ?? 0
             this.second = date?.second() ?? 0
 
-            // this.setDisplayText()
+            this.setDisplayText()
             this.setMonths()
-            // this.setDayLabels()
+            this.setDayLabels()
 
             if (isAutofocused) {
                 this.$nextTick(() =>
@@ -345,19 +345,19 @@ export default function hebrewDateTimePickerFormComponent({
             this.focusedDate = this.focusedDate.add(1, 'week')
         },
 
-        // getDayLabels: function () {
-        //     // const labels = dayjs.weekdaysShort();
-        //     const labels = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'שבת'];
+        getDayLabels: function () {
+            // const labels = dayjs.weekdaysShort();
+            const labels = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'שבת'];
 
-        //     if (firstDayOfWeek === 0) {
-        //         return labels
-        //     }
+            if (firstDayOfWeek === 0) {
+                return labels
+            }
 
-        //     return [
-        //         ...labels.slice(firstDayOfWeek),
-        //         ...labels.slice(0, firstDayOfWeek),
-        //     ]
-        // },
+            return [
+                ...labels.slice(firstDayOfWeek),
+                ...labels.slice(0, firstDayOfWeek),
+            ]
+        },
 
         getMaxDate: function () {
             let date = dayjs(this.$refs.maxDate?.value)
@@ -424,7 +424,7 @@ export default function hebrewDateTimePickerFormComponent({
 
         setMonths: function () {
             // check for leapYear
-            const isLeapYear = dayjs(this.focusedYear, 'YYYY').toCalendarSystem('hebrew').isLeapYear() ?? dayjs().toCalendarSystem('hebrew').isLeapYear()
+            const isLeapYear = dayjs(this.focusedYear, 'YYYY').toCalendarSystem('hebrew').isLeapYear() ?? dayjs().toCalendarSystem('hebrew').year().isLeapYear()
             isLeapYear ? this.months = [
                 'ניסן',
                 'אייר',
