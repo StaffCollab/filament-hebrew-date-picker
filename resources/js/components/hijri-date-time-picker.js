@@ -114,7 +114,7 @@ export default function hijriDateTimePickerFormComponent({
                 }
 
                 // check if focused Year has 12 months or 13
-                console.log(this.focusedYear, dayjs(this.focusedYear, 'YYYY').isLeapYear())
+                console.log(this.focusedYear, dayjs(this.focusedYear, 'YYYY').toCalendarSystem('hebrew').isLeapYear())
 
                 if (this.focusedDate.year() === year) {
                     return
