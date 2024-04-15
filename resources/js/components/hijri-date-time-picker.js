@@ -422,7 +422,8 @@ export default function hijriDateTimePickerFormComponent({
 
         setMonths: function () {
             // check for leapYear
-            dayjs().tz(timezone).toCalendarSystem('hebrew').isLeapYear() ? this.months = [
+            let year = $this.focusedYear
+            year.isLeapYear() ? this.months = [
                 'ניסן',
                 'אייר',
                 'סיון',
